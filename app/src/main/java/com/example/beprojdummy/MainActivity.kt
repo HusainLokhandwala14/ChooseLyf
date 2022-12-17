@@ -59,10 +59,6 @@ val batanwifi = findViewById<Button>(R.id.wifibutton)
 
 
 
-
-
-
-
     }
 }
 
