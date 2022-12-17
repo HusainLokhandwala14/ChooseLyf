@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment2">
+
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.beprojdummy.fragments.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment2_to_espDispFragment"
+            app:destination="@id/espDispFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/espDispFragment"
+        android:name="com.example.beprojdummy.fragments.EspDispFragment"
+        android:label="EspDispFragment"
+        tools:layout="@layout/fragment_esp_disp">
+        <action
+            android:id="@+id/action_espDispFragment_to_dataDispFragment"
+            app:destination="@id/dataDispFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dataDispFragment"
+        android:name="com.example.beprojdummy.fragments.DataDispFragment"
+        android:label="DataDispFragment"
+        tools:layout="@layout/fragment_data_disp"/>
+</navigation>

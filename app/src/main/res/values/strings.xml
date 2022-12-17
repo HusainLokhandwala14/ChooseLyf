@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">BeProjDummy</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string-array name="users">
+        <item>Body Temperature : 97.1° F \n"  "SPo2 : 97%\n"  "Heart-Rate : 60 Bpm</item>
+        <item>Body Temperature : 96.8° F \n"  "SPo2 : 96%\n"  "Heart-Rate : 79 Bpm</item>
+        <item>Body Temperature : 98.1° F \n"  "SPo2 : 97%\n"  "Heart-Rate : 91 Bpm</item>
+        <item>Body Temperature : 95.9° F \n"  "SPo2 : 98%\n"  "Heart-Rate : 71 Bpm</item>
+        <item>Body Temperature : 97.1° F \n"  "SPo2 : 97%\n"  "Heart-Rate : 60 Bpm</item>
+        <item>Body Temperature : 97.4° F \n"  "SPo2 : 96%\n"  "Heart-Rate : 69 Bpm</item>
+        <item>Body Temperature : 96.6° F \n"  "SPo2 : 98%\n"  "Heart-Rate : 56 Bpm</item>
+        <item>Body Temperature : 97.1° F \n"  "SPo2 : 97%\n"  "Heart-Rate : 60 Bpm</item>
+        <item>Body Temperature : 98.3° F \n"  "SPo2 : 95%\n"  "Heart-Rate : 64 Bpm</item>
+        <item>Body Temperature : 97.1° F \n"  "SPo2 : 97%\n"  "Heart-Rate : 83 Bpm</item>
+        <item>Body Temperature : 97.7° F \n"  "SPo2 : 98%\n"  "Heart-Rate : 67 Bpm</item>
+        <item>Body Temperature : 95.9° F \n"  "SPo2 : 98%\n"  "Heart-Rate : 79 Bpm</item>
+        <item>Body Temperature : 98.9° F \n"  "SPo2 : 97%\n"  "Heart-Rate : 107 Bpm</item>
+        <item>Body Temperature : 97.3° F \n"  "SPo2 : 97%\n"  "Heart-Rate : 87 Bpm</item>
+    </string-array>
+
+</resources>
