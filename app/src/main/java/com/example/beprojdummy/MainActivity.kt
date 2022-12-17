@@ -7,52 +7,41 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.provider.Telephony
+import android.view.View
 import android.widget.*
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.beprojdummy.databinding.ActivityMainBinding
+import kotlin.random.Random
+import kotlin.random.nextInt
+
 
 class MainActivity : AppCompatActivity() {
 
-    val users = arrayOf(
-        "Body Temperature : 97.1° F \n" + "SPo2 : 97%\n" + "Heart-Rate : 60 Bpm" ,
-        "Body Temperature : 96.8° F \n" + "SPo2 : 96%\n" + "Heart-Rate : 79 Bpm" ,
-        "Body Temperature : 98.1° F \n" + "SPo2 : 97%\n" + "Heart-Rate : 91 Bpm" ,
-        "Body Temperature : 95.9° F \n" + "SPo2 : 98%\n" + "Heart-Rate : 71 Bpm" ,
-        "Body Temperature : 97.1° F \n" + "SPo2 : 97%\n" + "Heart-Rate : 60 Bpm" ,
-        "Body Temperature : 97.4° F \n" + "SPo2 : 96%\n" + "Heart-Rate : 69 Bpm" ,
-        "Body Temperature : 96.6° F \n" + "SPo2 : 98%\n" + "Heart-Rate : 56 Bpm" ,
-        "Body Temperature : 97.1° F \n" + "SPo2 : 97%\n" + "Heart-Rate : 60 Bpm" ,
-        "Body Temperature : 98.3° F \n" + "SPo2 : 95%\n" + "Heart-Rate : 64 Bpm" ,
-        "Body Temperature : 97.1° F \n" + "SPo2 : 97%\n" + "Heart-Rate : 83 Bpm" ,
-        "Body Temperature : 97.7° F \n" + "SPo2 : 98%\n" + "Heart-Rate : 67 Bpm" ,
-        "Body Temperature : 95.9° F \n" + "SPo2 : 98%\n" + "Heart-Rate : 79 Bpm" ,
-        "Body Temperature : 98.9° F \n" + "SPo2 : 97%\n" + "Heart-Rate : 107 Bpm",
-        "Body Temperature : 97.3° F \n" + "SPo2 : 97%\n" + "Heart-Rate : 87 Bpm"
-    )
+
+    private val templist : MutableList<String> = mutableListOf("96.7" , "211133", "999", "98" ,"99")
+
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this , R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         navController = this.findNavController(R.id.navControllerFragment)
-        NavigationUI.setupActionBarWithNavController(this , navController)
+        NavigationUI.setupActionBarWithNavController(this, navController)
 
-val batanwifi = findViewById<Button>(R.id.wifibutton)
+        val batanwifi = findViewById<Button>(R.id.wifibutton)
 
         batanwifi.setOnClickListener {
-            if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.Q){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 val intent = Intent(Settings.Panel.ACTION_WIFI)
-                startActivityForResult(intent , 1 )
+                startActivityForResult(intent, 1)
 
-            }
-            else
-            {
+            } else {
                 val wifiManager = applicationContext.getSystemService(WIFI_SERVICE) as WifiManager
-                wifiManager.setWifiEnabled(true)
+                wifiManager.isWifiEnabled = true
 
             }
         }
@@ -60,10 +49,29 @@ val batanwifi = findViewById<Button>(R.id.wifibutton)
 
 
 
+      //databtn.setOnClickListener{
+        //  val randInt = Random.nextInt(100)
+          //mybdtemp.setText("$randInt  F")
+      //}
 
+//        val myrandInt = Random.nextInt(100)
+//        val mytempval = findViewById<TextView>(R.id.tempval)
+//        mytempval.text = "$myrandInt F"
+
+        generateNum()
 
 
     }
+    private val mybdtemp = findViewById<TextView>(R.id.tempval) as TextView
+
+     private fun generateNum(){
+
+        mybdtemp.setOnClickListener{
+            val random : Int = (0 until (templist.size)).random()
+            mybdtemp.text=templist[random]
+        }
+    }
 }
+
 
 
