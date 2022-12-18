@@ -70,6 +70,7 @@ class MainActivity : AppCompatActivity() {
             val random : Int = (0 until (templist.size)).random()
             mybdtemp.text=templist[random]
         }
+
     }
 }
 
